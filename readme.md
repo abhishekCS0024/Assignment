@@ -3,6 +3,23 @@
 ## Overview
 This project implements a RAG (Retrieval-Augmented Generation) pipeline with Neo4j integration for data retrieval and processing.
 
+## Architecture Diagram
+
+```mermaid
+graph TB
+    A[User] -->|Requests| B[Frontend]
+    B -->|API Calls| C[Backend]
+    C -->|Processes| D[Agent]
+    D -->|Queries| E[RAG Pipeline]
+    E -->|Retrieves Data| F[Neo4j Database]
+    F -->|Returns Results| E
+    E -->|Enriches with Dataset| G[enriched_posts.json]
+    E -->|Processes Results| D
+    D -->|Response| C
+    C -->|UI Update| B
+    B -->|Display| A
+```
+
 ## Project Structure
 
 ```

@@ -128,13 +128,7 @@ def display_post(post: Dict[str, Any], index: int):
         """, unsafe_allow_html=True)
         
         # Render CTA as a separate, styled element
-        if cta_text:
-            st.markdown(f"""
-            <div class="cta-text">
-                📢 <strong>CTA:</strong> {html.escape(cta_text)}
-            </div>
-            """, unsafe_allow_html=True)
-        
+       
         # Image suggestions
         if post.get('suggested_images'):
             st.markdown("**🖼️ Image Suggestions:**")

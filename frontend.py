@@ -108,22 +108,32 @@ if 'is_generating' not in st.session_state:
 def display_post(post: Dict[str, Any], index: int):
     """Display a single post with all its details"""
     
+    import html
+    
     with st.container():
-        # Safely handle CTA text
-        cta_text = post.get('cta', '')
-        if cta_text:
-            cta_html = f'<div class="cta-text">📢 <strong>CTA:</strong> {cta_text}</div>'
-        else:
-            cta_html = '<div class="cta-text">📢 <strong>CTA:</strong> No CTA provided</div>'
+        # Safely handle and escape text content
+        hook_text = html.escape(post.get('hook', ''))
+        post_content = html.escape(post.get('post_text', ''))
+        cta_text = post.get('cta', '').strip()
+        hashtags = ' '.join(post.get('hashtags', []))
         
+        # Render the main post card
         st.markdown(f"""
         <div class="post-card">
             <div class="day-badge">Day {post['day']} - {post['posting_day']}</div>
-            <div class="hook-text">🎯 {post['hook']}</div>
-            <div class="content-text">{post['post_text']}</div>
-            <div class="hashtags">{' '.join(post['hashtags'])}</div>
-            {cta_html}
+            <div class="hook-text">🎯 {hook_text}</div>
+            <div class="content-text">{post_content}</div>
+            <div class="hashtags">{hashtags}</div>
+        </div>
         """, unsafe_allow_html=True)
+        
+        # Render CTA as a separate, styled element
+        if cta_text:
+            st.markdown(f"""
+            <div class="cta-text">
+                📢 <strong>CTA:</strong> {html.escape(cta_text)}
+            </div>
+            """, unsafe_allow_html=True)
         
         # Image suggestions
         if post.get('suggested_images'):
@@ -144,8 +154,8 @@ def display_post(post: Dict[str, Any], index: int):
                         </div>
                         """, unsafe_allow_html=True)
         
-        # Close the post card div
-        st.markdown("</div>", unsafe_allow_html=True)
+        # Add spacing between posts
+        st.markdown("<br>", unsafe_allow_html=True)
 
 def display_results(state: Dict[str, Any]):
     """Display the complete content plan"""

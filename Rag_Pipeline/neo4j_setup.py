@@ -27,11 +27,11 @@ embeddings = HuggingFaceEmbeddings(
     encode_kwargs={'normalize_embeddings': True}
 )
 
-# Load your data (same as before)
+# Load your data
 with open("enriched_posts.json", "r", encoding="utf-8") as f:
     posts_data = json.load(f)
 
-# Create documents (same as before)
+# Create documents
 documents = []
 for i, post in enumerate(posts_data):
     post_text = clean_text(post.get("text", ""))
@@ -52,12 +52,12 @@ for i, post in enumerate(posts_data):
     )
     documents.append(doc)
 
-# Split documents (same as before)
+# Split documents
 splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
 chunks = splitter.split_documents(documents)
 chunks = [c for c in chunks if c.page_content.strip()]
 
-# CREATE NEO4J VECTOR STORE (replaces Pinecone)
+# CREATE NEO4J VECTOR STORE 
 vector_store = Neo4jVector.from_documents(
     documents=chunks,
     embedding=embeddings,
@@ -73,7 +73,7 @@ vector_store = Neo4jVector.from_documents(
     pre_delete_collection=True
 )
 
-# CREATE RETRIEVER (same interface as Pinecone)
+# CREATE RETRIEVER 
 retriever = vector_store.as_retriever(
     search_type="similarity",
     search_kwargs={"k": 5}

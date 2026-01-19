@@ -168,8 +168,7 @@ def search_images_pexels(query: str, max_results: int = 3) -> List[Dict[str, str
         return []
 
 def agent_c_creator(state: LinkedInGrowthState):
-    print("\n🎨 AGENT C — Creating content plan...")
-
+    
     creator = llm.with_structured_output(ContentPlan)
 
     niche = state["niche"]

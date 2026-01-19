@@ -43,6 +43,11 @@ NEO4J_DATABASE=neo4j
 AURA_INSTANCEID=b41f27a4
 AURA_INSTANCENAME=XXXXXXXX
 
+
+
+
+
+```
 3. Configure Neo4j connection in the RAG Pipeline
 
 ## Usage
@@ -51,7 +56,6 @@ Run the main application:
 ```bash
 python main.py
 ```
-
 ## Components
 
 - **agent.py**: AI agent for handling requests

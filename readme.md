@@ -28,6 +28,21 @@ pip install -r requirements.txt
 
 2. Set up environment variables in `.env` file
 
+## Environment Configuration
+
+Create a `.env` file in the project root with the following content (replace `XXX...` with your actual credentials):
+
+```bash
+GROQ_API_KEY=XXXXXXXX
+PINECONE_API_KEY=XXXX_XXXX
+PIXEL=XXXX XXXX
+NEO4J_URI=XXXXXXXX
+NEO4J_USERNAME=XXXXXXXX
+NEO4J_PASSWORD=XXXX_XXXX
+NEO4J_DATABASE=neo4j
+AURA_INSTANCEID=b41f27a4
+AURA_INSTANCENAME=XXXXXXXX
+
 3. Configure Neo4j connection in the RAG Pipeline
 
 ## Usage

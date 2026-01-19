@@ -1,8 +1,3 @@
-# ============================================
-# INSTALL (Windows / Colab)
-# pip install langchain langchain-groq langchain-huggingface langchain-community langgraph python-dotenv neo4j sentence-transformers langchain-neo4j
-# ============================================
-
 import os
 import time
 import json

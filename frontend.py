@@ -115,9 +115,12 @@ def display_post(post: Dict[str, Any], index: int):
             <div class="hook-text">🎯 {post['hook']}</div>
             <div class="content-text">{post['post_text']}</div>
             <div class="hashtags">{' '.join(post['hashtags'])}</div>
-            <div class="cta-text">📢 CTA: {post['cta']}</div>
+            # <div class="cta-text">📢 CTA: {post['cta']}</div>
+            <div class="cta-text">📢 <strong>CTA:</strong></div>
         """, unsafe_allow_html=True)
-        
+        # 
+        st.markdown(post["cta"])
+        # 
         # Image suggestions
         if post.get('suggested_images'):
             st.markdown("**🖼️ Image Suggestions:**")

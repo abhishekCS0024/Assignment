@@ -109,9 +109,6 @@ def display_post(post: Dict[str, Any], index: int):
     """Display a single post with all its details"""
     
     with st.container():
-        # Debug: Show if CTA exists
-        # st.write(f"DEBUG: CTA content: {post.get('cta', 'NOT FOUND')}")
-        
         # Safely handle CTA text
         cta_text = post.get('cta', '')
         if cta_text:
@@ -126,28 +123,8 @@ def display_post(post: Dict[str, Any], index: int):
             <div class="content-text">{post['post_text']}</div>
             <div class="hashtags">{' '.join(post['hashtags'])}</div>
             {cta_html}
-        </div>
         """, unsafe_allow_html=True)
         
-        # Image suggestions (rest of the code remains the same)
-
-# def display_post(post: Dict[str, Any], index: int):
-#     """Display a single post with all its details"""
-    
-#     with st.container():
-#         st.markdown(f"""
-#         <div class="post-card">
-#             <div class="day-badge">Day {post['day']} - {post['posting_day']}</div>
-#             <div class="hook-text">🎯 {post['hook']}</div>
-#             <div class="content-text">{post['post_text']}</div>
-#             <div class="hashtags">{' '.join(post['hashtags'])}</div>
-#             # <div class="cta-text">📢 CTA: {post['cta']}</div>
-#             <div class="cta-text">📢 <strong>CTA:</strong> {post['cta']}</div>
-#             # <div class="cta-text">📢 <strong>CTA:</strong></div>
-#         """, unsafe_allow_html=True)
-        # 
-        # st.markdown(post["cta"])
-        # 
         # Image suggestions
         if post.get('suggested_images'):
             st.markdown("**🖼️ Image Suggestions:**")
@@ -167,6 +144,7 @@ def display_post(post: Dict[str, Any], index: int):
                         </div>
                         """, unsafe_allow_html=True)
         
+        # Close the post card div
         st.markdown("</div>", unsafe_allow_html=True)
 
 def display_results(state: Dict[str, Any]):

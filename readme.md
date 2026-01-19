@@ -1,11 +1,5 @@
 # Assignment Project
 
-## Live Demo
-
-🚀 **Try the application live**: [https://assignmentgit-66sgoph2kf9gmc6vcupjbg.streamlit.app/](https://assignmentgit-66sgoph2kf9gmc6vcupjbg.streamlit.app/)
-
-> **Note**: The demo may take a moment to load initially as the service spins up.
-
 ## Overview
 This project implements a RAG (Retrieval-Augmented Generation) pipeline with Neo4j integration for data retrieval and processing.
 
@@ -92,3 +86,9 @@ See `requirements.txt` for all dependencies.
 ## License
 
 This project is for educational purposes.
+
+## Live Demo
+
+🚀 **Try the application live**: [https://assignmentgit-66sgoph2kf9gmc6vcupjbg.streamlit.app/](https://assignmentgit-66sgoph2kf9gmc6vcupjbg.streamlit.app/)
+
+> **Note**: The demo may take a moment to load initially as the service spins up.

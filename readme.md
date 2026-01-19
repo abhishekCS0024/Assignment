@@ -42,11 +42,6 @@ NEO4J_PASSWORD=XXXX_XXXX
 NEO4J_DATABASE=neo4j
 AURA_INSTANCEID=b41f27a4
 AURA_INSTANCENAME=XXXXXXXX
-
-
-
-
-
 ```
 3. Configure Neo4j connection in the RAG Pipeline
 

@@ -193,7 +193,7 @@ Rules:
 Each post must be 280-350 words (≈ 2 200-character LinkedIn “see more” folds).
 Use short, punchy paragraphs, emoji bullet points and line-breaks for scannability.
 End every post with 12-18 highly-relevant hashtags: mix 4-5 big (1 M+), 4-5 mid (50 k-1 M) and 4-5 micro/niche (<50 k) hashtags.
-Still output the same JSON fields (day, posting_day, content_type, hook, post_text, hashtags, cta, image_query).
+Still output the same JSON fields: ['day'], ['posting_day'], ['content_type'], ['hook'], ['post_text'], ['hashtags'], ['cta'], ['image_query'].
 """),        
 HumanMessage(
             content=f"""
